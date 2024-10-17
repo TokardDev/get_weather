@@ -129,9 +129,9 @@ def get_weather(city, country):
     # si le code de la reponse est 200 :
     if response.status_code == 200:
         logger.success(f"Data fetched successfully for {city}({country})")
-        for mesurement in data["list"]:
-            date = mesurement["dt_txt"].split(" ")[0]  # get the date
-            temp = mesurement['main']['temp']
+        for measurement in data["list"]:
+            date = measurement["dt_txt"].split(" ")[0]  # get the date
+            temp = measurement['main']['temp']
             measure.add_temp(date, temp)
 
         json_data = measure.to_json()  # convertis la classe en json
